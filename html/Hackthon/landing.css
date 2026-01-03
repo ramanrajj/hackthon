@@ -1,0 +1,57 @@
+body, html { margin:0; padding:0; font-family:'Segoe UI', sans-serif; overflow-x:hidden; }
+
+.hero {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  position: relative;
+  overflow: hidden;
+  color:#fff;
+}
+
+.hero::after {
+  content:"";
+  position:absolute; top:0; left:0;
+  width:100%; height:100%;
+  background: url('https://www.transparenttextures.com/patterns/cubes.png');
+  opacity:0.05;
+  animation:bgmove 30s linear infinite;
+}
+
+@keyframes bgmove { 0%{background-position:0 0;} 100%{background-position:500px 500px;} }
+
+.hero-content { position: relative; z-index: 2; }
+
+.hero-content h1 { font-size:4rem; margin-bottom:20px; text-shadow:2px 2px 15px rgba(0,0,0,0.3); }
+.hero-content p { font-size:1.5rem; margin-bottom:50px; }
+
+/* Fade-in */
+.fade-in { opacity:20; animation:fadeIn 1s forwards; }
+.fade-in.delay1 { animation-delay:0.5s; }
+.fade-in.delay2 { animation-delay:1s; }
+
+@keyframes fadeIn { to { opacity:1; } }
+
+/* CTA Button */
+.cta-btn {
+  background: red;
+  color:#fff;
+  font-size:1.5rem;
+  padding:20px 70px;
+  border-radius:50px;
+  border:none;
+  cursor:pointer;
+  animation:pulse 1.5s infinite;
+  box-shadow:0 0 30px rgba(255,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cta-btn:hover { transform: scale(1.15) rotate(-2deg); box-shadow:0 0 60px rgba(255,0,0,0.8); }
+
+@keyframes pulse {
+  0% { box-shadow:0 0 0 0 rgba(255,0,0,0.5); }
+  70% { box-shadow:0 0 0 30px rgba(255,0,0,0); }
+  100% { box-shadow:0 0 0 0 rgba(255,0,0,0); }
+}
