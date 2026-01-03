@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Website - Live Location</title>
+</head>
+<body>
+<h2>User Website (Live Location Sender)</h2>
+
+<script>
+const userId = "user_" + Math.floor(Math.random() * 100000);
+
+setInterval(() => {
+  navigator.geolocation.getCurrentPosition(pos => {
+    fetch('http://localhost:3000/api/update-location', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userId: userId,
+        name: "User",
+        phone: "98XXXXXXXX",
+        lat: pos.coords.latitude,
+        lng: pos.coords.longitude
+      })
+    });
+  });
+}, 5000);
+</script>
+</body>
+</html>

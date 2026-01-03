@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Helpline</title>
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="fade-in">Save Lives with One Tap</h1>
+    <p class="fade-in delay1">Instant emergency response when it matters most</p>
+    <button type="button" class="cta-btn fade-in delay2" id="emergencyBtn">EMERGENCY</button>
+  </div>
+</section>
+
+<script>
+  const btn = document.getElementById("emergencyBtn");
+  btn.addEventListener("click", function(){
+      window.location.href = "services.html";
+  });
+</script>
+</body>
+</html>
