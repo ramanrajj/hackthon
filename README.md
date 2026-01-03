@@ -1,2 +1,0 @@
-# hackthon
-locus hackthon project
